@@ -5,7 +5,9 @@ public class ejercicio2{
 
     public static void main(String[] args){
         llenarPila(pila);
+        System.out.println("Pila original"+pila);
         cambiarSigno(pila);
+        System.out.println("Pila negativa"+pila);
     }
 
     public static void llenarPila(Stack<Integer> pila){
@@ -16,11 +18,11 @@ public class ejercicio2{
 
     public static void cambiarSigno(Stack<Integer> pila){
         if (pila.isEmpty()) {
-            pila.pop();
-        }else {
-            int elemento = (pila.pop() * 2) + 2;
-            cambiarSigno(pila);
-            pila.push(pila.pop()- elemento);
+            return;
         }
+        int elemento = pila.pop() *-1;
+        cambiarSigno(pila);
+        pila.push(elemento);
+
     }
 }
