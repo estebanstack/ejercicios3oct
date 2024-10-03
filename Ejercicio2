@@ -16,7 +16,7 @@ public class ejercicio2{
 
     public static void cambiarSigno(Stack<Integer> pila){
         Stack<Integer> temp = new Stack<>();
-        int numeroDuplicado=0, numero=0,contador=0;
+        int contador=0;
         while(!pila.isEmpty()){
             temp.push(pila.pop()-((pila.get(contador)*2)+2));
         }
