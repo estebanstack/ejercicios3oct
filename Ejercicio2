@@ -15,16 +15,12 @@ public class ejercicio2{
     }
 
     public static void cambiarSigno(Stack<Integer> pila){
-        Stack<Integer> temp = new Stack<>();
-        int contador=0;
-        while(!pila.isEmpty()){
-            temp.push(pila.pop()-((pila.get(contador)*2)+2));
+        if (pila.isEmpty()) {
+            pila.pop();
+        }else {
+            int elemento = (pila.pop() * 2) + 2;
+            cambiarSigno(pila);
+            pila.push(pila.pop()- elemento);
         }
-
-        while(!temp.isEmpty()){
-            pila.push(temp.pop());
-        }
-
-        System.out.println(pila);
     }
 }
