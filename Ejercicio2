@@ -1,0 +1,30 @@
+import java.util.Stack;
+
+public class ejercicio2{
+    static Stack<Integer> pila = new Stack<>();
+
+    public static void main(String[] args){
+        llenarPila(pila);
+        cambiarSigno(pila);
+    }
+
+    public static void llenarPila(Stack<Integer> pila){
+        for(int i = 0; i < 10; i++){
+            pila.push(i);
+        }
+    }
+
+    public static void cambiarSigno(Stack<Integer> pila){
+        Stack<Integer> temp = new Stack<>();
+        int numeroDuplicado=0, numero=0,contador=0;
+        while(!pila.isEmpty()){
+            temp.push(pila.pop()-((pila.get(contador)*2)+2));
+        }
+
+        while(!temp.isEmpty()){
+            pila.push(temp.pop());
+        }
+
+        System.out.println(pila);
+    }
+}
